@@ -16,6 +16,7 @@ import com.example.lokaljobapp.viewModel.FavoritesViewModel
 import com.example.lokaljobapp.viewModel.FavoritesViewModelFactory
 
 
+
 class BookmarkFragment : Fragment() {
 
     private lateinit var viewModel: FavoritesViewModel
@@ -26,8 +27,10 @@ class BookmarkFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentBookmarkBinding.inflate(inflater, container, false)
         val jobDao = JobDatabase.getDatabase(requireContext()).jobDao()
+
         val repository = JobRepository(jobDao)
         val db = JobDatabase.getDatabase(requireContext()).jobDao()
         val favoriteJobs = db.getFavoriteJobs().value
@@ -44,6 +47,9 @@ class BookmarkFragment : Fragment() {
         viewModel.favoriteJobs.observe(viewLifecycleOwner) { favoriteJobs ->
             Log.d("BookmarkFragment", "Favorite jobs received: $favoriteJobs")
             bookmarkAdapter.submitList(favoriteJobs)
+        }
+        viewModel.getAllJobs.observe(viewLifecycleOwner) { jobs ->
+            Log.d("DatabaseContent", "All jobs: $jobs")
         }
         return binding.root
     }

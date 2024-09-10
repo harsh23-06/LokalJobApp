@@ -8,6 +8,5 @@ import com.example.lokaljobapp.repository.JobRepository
 class FavoritesViewModel(private val repository: JobRepository) : ViewModel() {
 
     val favoriteJobs: LiveData<List<JobEntity>> = repository.getFavoriteJobs()
-
-
+    val getAllJobs: LiveData<List<JobEntity>> = repository.getAllJobs()
 }

@@ -36,8 +36,15 @@ class JobRepository(private val jobDao: JobDao) {
           jobDao.updateFavorite(job.id, job.isFavorite)
 
      }
+     suspend fun insertJob(job: JobEntity) {
+          jobDao.insertJob(job)
+     }
+
      fun getFavoriteJobs(): LiveData<List<JobEntity>> {
           return jobDao.getFavoriteJobs()
+     }
+     fun getAllJobs():LiveData<List<JobEntity>> {
+          return jobDao.getAllJobs()
      }
 }
 

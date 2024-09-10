@@ -87,6 +87,7 @@ class JobAdapter(
                 updateFavoriteIcon()
                 val favoriteValue = if (isFavorite) 1 else 0
                 onFavoriteClick(job, favoriteValue)
+
             }
         }
     }

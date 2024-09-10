@@ -51,6 +51,8 @@ class JobsViewModel(private val repository: JobRepository) : ViewModel() {
             )
             Log.e("jobentity","$jobEntity")
             repository.updateJobFavorite(jobEntity)
+            repository.insertJob(jobEntity)
         }
     }
+
 }
