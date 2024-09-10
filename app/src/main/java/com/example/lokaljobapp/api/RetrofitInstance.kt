@@ -1,8 +1,6 @@
 package com.example.lokaljobapp.api
 
-import com.example.lokaljobapp.util.Constants.Companion.BASE_URL
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
