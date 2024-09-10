@@ -53,11 +53,7 @@ class JobAdapter(private val context: Context) : RecyclerView.Adapter<JobAdapter
 
         updateFavoriteIcon()
 
-        holder.itemView.setOnClickListener {
-            val intent = Intent(context, JobInfoActivity::class.java)
-            intent.putExtra("job", job)
-            context.startActivity(intent)
-        }
+
 
         holder.favoriteIcon.setOnClickListener {
             isFavorite = !isFavorite

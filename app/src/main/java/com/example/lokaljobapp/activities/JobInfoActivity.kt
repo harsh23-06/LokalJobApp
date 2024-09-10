@@ -23,8 +23,7 @@ class JobInfoActivity : AppCompatActivity() {
             insets
         }
 
-        val jobItem = intent.getParcelableExtra<JobResult>("job")
-        binding.textView.text = jobItem?.title
+
 
     }
 }
