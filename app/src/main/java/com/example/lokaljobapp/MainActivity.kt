@@ -1,28 +1,11 @@
 package com.example.lokaljobapp
 
-import android.app.Fragment
-import android.health.connect.datatypes.units.Length
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.example.lokaljobapp.api.JobListService
-import com.example.lokaljobapp.api.RetrofitInstance
 import com.example.lokaljobapp.databinding.ActivityMainBinding
 import com.example.lokaljobapp.fragments.BookmarkFragment
 import com.example.lokaljobapp.fragments.JobListFragment
-import com.example.lokaljobapp.model.JobResponse
-import com.example.lokaljobapp.repository.JobRepository
-import com.example.lokaljobapp.util.Resource
-import com.example.lokaljobapp.viewModel.JobsViewModel
-import com.example.lokaljobapp.viewModel.JobsViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 

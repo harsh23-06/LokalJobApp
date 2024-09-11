@@ -1,9 +1,12 @@
 package com.example.lokaljobapp.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -61,8 +64,8 @@ class JobAdapter(
         if (holder is JobViewHolder) {
             val job = jobs[position]
             holder.companyName.text = job.company_name ?: "Company Name not available"
-            holder.jobTitle.text = job.title
-            holder.jobContact.text = job.whatsapp_no
+            holder.jobTitle.text = job.title?:"Title not available"
+            holder.jobContact.text = job.whatsapp_no?:"Contact not available"
             val primaryDetails = job.primary_details
             if (primaryDetails != null) {
                 holder.jobLocation.text = primaryDetails.Place ?: "Location not available"
@@ -71,7 +74,11 @@ class JobAdapter(
                 holder.jobLocation.text = "Location not available"
                 holder.jobSalary.text = "Salary not available"
             }
-
+            holder.callHR.setOnClickListener {
+                val intent = Intent(Intent.ACTION_DIAL)
+                intent.data = Uri.parse(job.custom_link)
+                context.startActivity(intent)
+            }
             var isFavorite = false
             fun updateFavoriteIcon() {
                 if (isFavorite) {
@@ -101,6 +108,7 @@ class JobAdapter(
         val jobSalary: TextView = itemView.findViewById(R.id.salaryRange)
         val jobContact: TextView = itemView.findViewById(R.id.contact)
         val favoriteIcon: ImageView = itemView.findViewById(R.id.favoriteIcon)
+        val callHR:Button = itemView.findViewById(R.id.btnCallHR)
     }
 
     class LoaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

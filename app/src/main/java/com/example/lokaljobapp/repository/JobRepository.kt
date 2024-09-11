@@ -1,14 +1,11 @@
 package com.example.lokaljobapp.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.lokaljobapp.api.JobListService
 import com.example.lokaljobapp.api.RetrofitInstance
 import com.example.lokaljobapp.db.JobDao
 import com.example.lokaljobapp.db.JobEntity
 import com.example.lokaljobapp.model.JobResponse
-import com.example.lokaljobapp.util.Resource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

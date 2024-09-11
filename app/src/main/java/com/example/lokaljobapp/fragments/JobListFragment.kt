@@ -102,7 +102,6 @@ class JobListFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        // Unregister the receiver
         requireContext().unregisterReceiver(networkChangeReceiver)
     }
 }

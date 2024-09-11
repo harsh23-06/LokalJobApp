@@ -1,9 +1,6 @@
 package com.example.lokaljobapp.model
 
 
-import android.os.Parcel
-import android.os.Parcelable
-
 data class JobResponse(
     val results: List<JobResult>
 )

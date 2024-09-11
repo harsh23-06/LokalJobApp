@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.lokaljobapp.R
 import com.example.lokaljobapp.databinding.ActivityJobInfoBinding
-import com.example.lokaljobapp.model.JobResult
 
 class JobInfoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityJobInfoBinding
